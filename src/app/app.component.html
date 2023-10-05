@@ -1,1 +1,20 @@
-<p>Hello World</p>
+<!--
+  String Interpolation '', Template Expression {{}}
+  https://angular.io/guide/interpolation, https://angular.io/guide/understanding-template-expr-overview
+
+  Property Binding [], Event Binding ()
+  https://angular.io/guide/property-binding, https://angular.io/guide/event-binding-concepts
+-->
+
+<div>
+  <h3>Hello {{ label }} application</h3>
+  <p>I live in {{ getCity() }}</p>
+  <p>I am {{ 30 + 16 }} years of age</p>
+</div>
+
+<hr>
+<div>
+  <h3>Change the 'id' in url to see a new image</h3>
+  <input [value]="imgUrl" (keyup)="imageChangeHandler($event)">
+  <app-post [img]="imgUrl"></app-post>
+</div>
