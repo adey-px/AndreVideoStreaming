@@ -1,4 +1,10 @@
+<!--
+- two props created, their values are passed in parent component
+- ngcontent is placeholder for content injection from parent
+-->
+
 <div>
-  <p>Post Component below, as Child to App Component</p>
-  <img [src]="postImg" alt="random-image">
+  <p>Post Component here being Child to App Component</p>
+  <ng-content></ng-content>
+  <img [src]="postImg" (click)="clickImage.emit(postImg)">
 </div>

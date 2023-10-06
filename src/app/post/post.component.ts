@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -7,11 +7,24 @@ import { Component, Input } from '@angular/core';
 })
 
 // Export Post Component to app.module
-export class PostComponent {
+export class PostComponent implements OnInit {
   @Input('img') postImg = '';
+  @Output() clickImage = new EventEmitter<string>();
+
+  // component lifecycle hooks
+  constructor() {
+    console.log('I am a hook, I run first once in lifecycle');
+  }
+
+  ngOnInit() {
+    console.log('I am a hook, I run later once in lifecycle')
+  }
 }
 
 /*
-- @Input is interface that indicates `postImg` prop expects a value
-- ('img') is optional called Aliase to ref the prop where it is used
+- @Input directive indicates `postImg` prop expects data or value from Parent (app) component
+- Use of ('img') is optional, it is called Aliase to ref prop where it is used, // @Input() postImg = '';
+- @Output directive is used to send event data or value thru EventEmitter to Parent (app) component
+
+- Component lifecycle hooks https://angular.io/guide/lifecycle-hooks
 */

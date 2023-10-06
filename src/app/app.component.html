@@ -15,6 +15,10 @@
 <hr>
 <div>
   <h3>Change the 'id' in url to see a new image</h3>
-  <input [value]="imgUrl" (keyup)="imageChangeHandler($event)">
+  <input [value]="imgUrl" (keyup)="changeImageHandler($event)">
+
   <app-post [img]="imgUrl"></app-post>
+  <app-post [img]="imgUrl" (clickImage)="showImgUrlHandler($event)">
+    Sample Content Injection
+  </app-post>
 </div>

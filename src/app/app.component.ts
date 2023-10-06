@@ -17,7 +17,12 @@ export class AppComponent {
     return this.city;
   }
 
-  imageChangeHandler(e: KeyboardEvent) {
+  // event handlers or listeners
+  changeImageHandler(e: KeyboardEvent) {
     this.imgUrl = (e.target as HTMLInputElement).value;
+  }
+
+  showImgUrlHandler(e: string) {
+    alert(e);
   }
 }
